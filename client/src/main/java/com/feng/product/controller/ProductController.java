@@ -31,11 +31,20 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    /**
+     * 通过商品构面的列表进行修减商品库存
+     * @param productInfoList
+     */
     @PostMapping("reduce")
     public void reduceProductCount(@RequestBody List<ProductInfo> productInfoList){
         boolean result = productService.reduceProductCount(productInfoList);
     }
 
+    /**
+     * 通过商品id集合查询商品列表
+     * @param listId
+     * @return
+     */
     @GetMapping("list")
     public List<Product> getByIds(@RequestParam("ids")List<Integer> listId){
         List<Product> list = productService.findByIds(listId);
