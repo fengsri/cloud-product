@@ -31,7 +31,7 @@ class ProductRepositoryTest {
         product.setId(6);
         product.setCount(10);
         product.setName("木瓜");
-        product.setPrice(new BigDecimal(20));
+        product.setPrice(20.0);
         product.setType("水果");
         Product result = productRepository.save(product);
         System.out.println(result);

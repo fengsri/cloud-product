@@ -25,3 +25,25 @@ spring:
 
 server:
   port: 8083
+
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000
+    getHello:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+
+
+management:
+  context-path: /
+
+logging:
+  level:
+    org.springframework.cloud.openfeign: debug
